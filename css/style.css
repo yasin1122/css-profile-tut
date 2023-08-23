@@ -14,12 +14,15 @@ img {
 }
 
 /* || UTILITY STYLES */
-
 .nowrap {
   white-space: nowrap;
 }
 
 /* || GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: 1.5rem 'Nunito', sans-serif;
   min-height: 100vh;
@@ -105,52 +108,59 @@ footer {
 
 /* || SMALL */
 @media screen and (min-width: 576px) {
-  body {
-    background-color: green;
-    background-image: radial-gradient(whitesmoke, green);
+  main {
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 1rem;
   }
-  nav {
-    display: none;
+
+  .card {
+    width: min(100%, 400px);
   }
 }
 
 /* || MEDIUM */
 @media screen and (min-width: 768px) {
-  body {
-    background-color: gold;
-    background-image: radial-gradient(whitesmoke, gold);
+  nav {
+    display: none;
   }
-}
-
-/* || LARGE */
-@media screen and (min-width: 992px) {
-  body {
-    background-color: firebrick;
-    background-image: radial-gradient(whitesmoke, firebrick);
+  .card figure {
+    flex-flow: column-reverse;
+  }
+  .card p {
+    margin-top: 1rem;
   }
 }
 
 /* || XL  */
 @media screen and (min-width: 1200px) {
-  body {
-    background-color: rebeccapurple;
-    background-image: radial-gradient(whitesmoke, rebeccapurple);
+  .card {
+    width: min(calc(33% - 1rem), 500px);
   }
 }
 
 /* || MOBILE DEVICE LANDSCAPE  */
 @media screen and (max-height: 425px) and (min-aspect-ratio: 7/4) {
-  body {
-    background-color: dodgerblue;
-    background-image: radial-gradient(whitesmoke, dodgerblue);
-  }
-
-  h1,
-  h2 {
+  h1 {
     font-size: 1.5rem;
   }
 
   nav {
     display: none;
+  }
+
+  main {
+    flex-flow: nowrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+  }
+
+  .card {
+    width: min(calc(33% - 0.25rem), 200px);
+  }
+
+  .card figcaption,
+  .card p {
+    font-size: 1.25rem;
   }
 }
