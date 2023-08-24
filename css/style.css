@@ -53,9 +53,12 @@ nav {
   justify-content: space-evenly;
 }
 
-nav a,
-nav a:visited {
+nav :is(a:link, a:visited) {
   color: black;
+}
+
+nav a:active {
+  color: red;
 }
 
 nav a:hover,
